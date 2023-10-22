@@ -51,12 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         f = findViewById(R.id.f);
         view=findViewById(R.id.view);
         add.setOnClickListener(this);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,StudentsActivity.class);
-                startActivity(intent);
-            }
+        view.setOnClickListener(v -> {
+            Intent intent=new Intent(MainActivity.this,StudentsActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -101,15 +98,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void showSimpleDialog(Context context, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
-        // Set the message for the dialog
         builder.setMessage(message);
-
-        // Set a positive button (OK button)
         builder.setPositiveButton("OK", (dialog, which) -> {
-            // You can add code to handle the OK button click if needed
         });
-
-        // Create and show the dialog
         AlertDialog dialog = builder.create();
         dialog.show();
     }

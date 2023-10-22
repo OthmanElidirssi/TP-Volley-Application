@@ -1,19 +1,14 @@
 package com.example.volleyapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import com.example.volleyapplication.student.Student;
 import com.example.volleyapplication.student.StudentAdapter;
 import com.example.volleyapplication.student.StudentApi;
@@ -72,29 +67,25 @@ public class StudentsActivity extends AppCompatActivity {
         Button update = dialogView.findViewById(R.id.update);
         Button delete = dialogView.findViewById(R.id.delete);
 
-        AlertDialog alertDialog = dialogBuilder.create(); // Create the dialog
-
-        // Set a listener for the delete button
+        AlertDialog alertDialog = dialogBuilder.create();
         delete.setOnClickListener(v -> {
             StudentApi.deleteStudent(student.getId(), context, new StudentApi.VolleyCallback() {
                 @Override
                 public void onSuccess(List<Student> students) {
-                    // Handle the success, including dismissing the dialog
                     studentService.delete(student);
                     adapter.notifyDataSetChanged();
-                    alertDialog.dismiss(); // Dismiss the dialog here
+                    alertDialog.dismiss();
                 }
 
                 @Override
                 public void onError(String errorMessage) {
-                    // Handle the error here
+
                 }
             });
         });
 
-        // Set a listener for the update button (if needed)
+
         update.setOnClickListener(v -> {
-            // Implement update functionality
         });
 
         return alertDialog;

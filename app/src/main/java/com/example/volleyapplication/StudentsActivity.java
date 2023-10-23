@@ -1,6 +1,7 @@
 package com.example.volleyapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -9,10 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+
 import com.example.volleyapplication.student.Student;
 import com.example.volleyapplication.student.StudentAdapter;
 import com.example.volleyapplication.student.StudentApi;
 import com.example.volleyapplication.student.StudentService;
+import com.example.volleyapplication.utility.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,19 +72,26 @@ public class StudentsActivity extends AppCompatActivity {
 
         AlertDialog alertDialog = dialogBuilder.create();
         delete.setOnClickListener(v -> {
-            StudentApi.deleteStudent(student.getId(), context, new StudentApi.VolleyCallback() {
-                @Override
-                public void onSuccess(List<Student> students) {
-                    studentService.delete(student);
-                    adapter.notifyDataSetChanged();
-                    alertDialog.dismiss();
-                }
 
-                @Override
-                public void onError(String errorMessage) {
+            Utility.showSimpleDialog(StudentsActivity.this, "Etes vous sure de vouloir supprimer",
+                    (arg1, arg2) -> {
+                        StudentApi.deleteStudent(student.getId(), context, new StudentApi.VolleyCallback() {
+                            @Override
+                            public void onSuccess(List<Student> students) {
+                                studentService.delete(student);
+                                adapter.notifyDataSetChanged();
+                                alertDialog.dismiss();
+                            }
 
-                }
-            });
+                            @Override
+                            public void onError(String errorMessage) {
+
+                            }
+                        });
+
+                    }, (arg1, arg2) -> {
+                    });
+
         });
 
 

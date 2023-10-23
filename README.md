@@ -10,7 +10,6 @@
 ![7-List of Students](https://github.com/OthmanElidirssi/TP-Volley-Application/assets/132103080/174faa25-cfb0-4e98-bfaf-561f0385d10f)\n
 # Deletion of a Student:
 ![8-Before Deletion](https://![9-Deletion pop up](https://github.com/OthmanElidirssi/TP-Volley-Application/assets/132103080/e85154c4-3948-4ecd-a395-8221fadb779d)\n
-github.com/OthmanElidirssi/TP-Volley-Application/assets/132103080/2cfcc3c8-c39e-4c22-b7de-1050ec684a6c)\n
 ![10-Deletion Confirmation](https://github.com/OthmanElidirssi/TP-Volley-Application/assets/132103080/5f24c222-0e2c-4dc0-a413-9961ae06d54d)\n
 ![11-Updated Student List after deletion](https://github.com/OthmanElidirssi/TP-Volley-Application/assets/132103080/cdc5f61f-cb2d-4ef5-929a-adb57a414d9b)\n
 ![12-Data Base after deletion](https://github.com/OthmanElidirssi/TP-Volley-Application/assets/132103080/86064066-1b18-48f9-9edd-b4b07d127c8e)\n
